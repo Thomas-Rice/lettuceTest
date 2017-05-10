@@ -18,8 +18,15 @@ def before_feature(context, feature):
     context.x = baseTest.baseTest(context.testObject[context.testName])
 
 def after_feature(context, feature):
-    time.sleep(10)
+    #To allow for Nuke to fully close
+    time.sleep(3)
 
+def after_step(context, step):
+    #Close the application if the test has not failed and on the last step.
+    if not step.status == 'failed' and step.step_type is 'then':
+        context.x.tearDown()
+    elif step.status == 'failed' and step.step_type is not 'given':
+        context.x.tearDown()
 
 def after_all(context):
     pass

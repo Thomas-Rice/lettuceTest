@@ -13,4 +13,3 @@ def step_impl(context):
 @then('the cameras selected should move according to the mouse moves')
 def step_impl(context):
     context.x.evaluate(context.testName, context.refBBOX)
-    context.x.tearDown()
