@@ -1,7 +1,6 @@
 import sys
 sys.path.append('C:\\Users\\thomas.rice\\PycharmProjects\\GUI_Tester\\')
 
-import baseTest
 import testRunner
 from paths_and_messages import *
 import time
@@ -15,7 +14,7 @@ def before_all(context):
 def before_feature(context, feature):
     context.testName = feature.name
     context.refBBOX = context.bboxes[context.testName]
-    context.x = baseTest.baseTest(context.testObject[context.testName])
+    context.x = context.testObject[context.testName]
 
 def after_feature(context, feature):
     #To allow for Nuke to fully close
