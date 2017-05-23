@@ -3,6 +3,8 @@ Feature: HorizonTool_Test
 
 
   Scenario: HorizonTool layout drag
-    Given Nuke is open with a C_CameraSolver setup and on horizon mode
-    When we ctrl + alt drag on the viewer
+    Given Nuke is open with a C_CameraSolver setup
+    When I double click on the C_CameraSolver
+    And I double click on the Horizon Tool
+    And I ctrl + alt drag on the viewer
     Then the viewer should move according to the mouse moves

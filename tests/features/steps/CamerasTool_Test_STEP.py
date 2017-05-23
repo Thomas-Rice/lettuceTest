@@ -1,14 +1,11 @@
-from behave import given, when, then
+from behave import when, then
 
 
+#given, and -> located in HorizonTool
 
-@given('Nuke is open with a C_CameraSolver setup and on cameras mode')
+@when('I double click on the Cameras Tool')
 def step_impl(context):
-    context.x.setup()
-
-@when('I ctrl + alt drag on the viewer with camera 1 selected')
-def step_impl(context):
-    context.x.execute()
+    context.x.clickCamerasTool()
 
 @then('the cameras selected should move according to the mouse moves')
 def step_impl(context):

@@ -3,6 +3,8 @@ Feature: CamerasTool_Test
 
 
   Scenario: Camera layout drag
-    Given Nuke is open with a C_CameraSolver setup and on cameras mode
-    When I ctrl + alt drag on the viewer with camera 1 selected
+    Given Nuke is open with a C_CameraSolver setup
+    When I double click on the C_CameraSolver
+    And I double click on the Cameras Tool
+    And I ctrl + alt drag on the viewer
     Then the cameras selected should move according to the mouse moves

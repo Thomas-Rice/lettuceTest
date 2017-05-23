@@ -1,5 +1,5 @@
 import sys
-sys.path.append('C:\\Users\\thomas.rice\\PycharmProjects\\GUI_Tester\\')
+sys.path.append('C:\\Users\\twr_000\\PycharmProjects\\test\\GUI_Tester\\')
 
 import testRunner
 from paths_and_messages import *
@@ -9,6 +9,7 @@ import time
 def before_all(context):
     context.testObject = testRunner.returnTestObjects()
     context.bboxes = PM_bboxes
+    context.fileToOpen = PM_fileToOpen
 
 
 def before_feature(context, feature):
