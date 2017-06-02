@@ -24,9 +24,9 @@ def after_feature(context, feature):
 def after_step(context, step):
     #Close the application if the test has not failed and on the last step.
     if not step.status == 'failed' and step.step_type is 'then':
-        context.x.tearDown()
-    elif step.status == 'failed' and step.step_type is not 'given':
-        context.x.tearDown()
+        context.x.tearDown('')
+    elif step.status == 'failed':
+        context.x.tearDown('Step Failed, Shutting Down Application')
 
 def after_all(context):
     pass

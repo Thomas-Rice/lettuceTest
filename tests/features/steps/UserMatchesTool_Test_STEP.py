@@ -2,7 +2,7 @@ from behave import when, then
 
 #given, and -> located in HorizonTool
 
-@when('And I Match/Solve/SetupRig')
+@when('I Match/Solve/SetupRig')
 def step_impl(context):
     context.x.matchAndSolveSetupRig()
 
